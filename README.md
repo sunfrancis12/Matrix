@@ -1,5 +1,29 @@
 # 高效能計算作業
 
+## 實際比較:
+### 環境:
+1. I9-12900kf
+2. 64 GB RAM
+3. 1TB SSD
+4. Windows System
+5. 當下執行五個 chrome 分頁
+6. 當下執行 VSCODE
+
+### 執行:
+以 1000 * 1000 矩陣進行運算(矩陣數字為十以內的隨機數字)
+
+### 執行結果:
+1. ijk 執行時間: 91.739 sec
+2. loop-reordering 執行時間: 87.018 sec
+3. Matrix-column 執行時間: 87.511 sec
+4. noncopy-submatrix 執行時間: 8.736 sec
+5. copy-submatrix 執行時間: 8.028 sec
+
+### 結論:
+與論文中結論差不多，但在 Matrix-column 的執行時間上有發生過比 ijk 執行時間長的問題
+但可能只是環境當下有跑其他東西，造成的誤會
+不過確實跟 loop-reordering 差異不大
+
 ## 變數說明
 假設矩陣乘法為 C = A * B
 A 矩陣是 m x n 的矩陣
