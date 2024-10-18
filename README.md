@@ -1,6 +1,42 @@
 # 高效能計算作業
 
 ## 實際比較:
+### Macbook 運行數據
+#### int
+同為 1000*1000 的矩陣運算，執行結果為：
+![image](https://github.com/user-attachments/assets/068ba5c1-fff7-413d-bf0f-2be2722027b8)
+
+#### double
+copy (Copy-Block 方法):
+
+執行時間: 6.12667 秒
+結果與其他方法略有不同
+
+
+noncopy (Non-Copy Block 方法):
+
+執行時間: 9.28451 秒
+結果與 IJK, Matrix, 和 Loop 方法一致
+
+
+ijk (基本的 IJK 方法):
+
+執行時間: 8.24977 秒
+結果與 noncopy, Matrix, 和 Loop 方法一致
+
+
+Matrix (可能是另一種基本方法):
+
+執行時間: 8.2924 秒
+結果與 noncopy, IJK, 和 Loop 方法一致
+
+
+loop (可能是優化的循環順序方法):
+
+執行時間: 5.73124 秒
+結果與 noncopy, IJK, 和 Matrix 方法一致
+
+
 ### 環境:
 1. I9-12900kf
 2. 64 GB RAM
